@@ -266,7 +266,7 @@
   .sidebar-container {
     width: 250px;
     z-index: 200; /* Diletakkan di atas layer lain saat overlay */
-    box-shadow: 6px 0 20px rgba(0, 0, 0, 0.35);.btn-open-sidebar
+    box-shadow: 6px 0 20px rgba(0, 0, 0, 0.35);
   }
 
   .btn-open-sidebar {
