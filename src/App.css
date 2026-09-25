@@ -416,3 +416,21 @@ html, body, #root {
     padding: 6px;
   }
 }
+
+@media (max-width: 768px) {
+
+  /* 1. Izinkan HTML, Body, dan App Container bisa di-scroll secara vertikal */
+  html, body, #root, .app-container {
+    overflow-y: auto !important; /* Mengaktifkan scroll vertikal */
+    overflow-x: hidden !important; /* Mencegah geser-geser kesamping */
+    height: auto !important;
+    min-height: 100vh;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling alami untuk browser iOS/Safari */
+  }
+
+  .app-container {
+    padding-bottom: calc(40px + env(safe-area-inset-bottom, 16px)); /* Memberi ruang napas di paling bawah */
+  }
+
+ 
+}
