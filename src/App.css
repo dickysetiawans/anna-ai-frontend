@@ -1,0 +1,354 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.vrm-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* Container UI Bagian Kiri Bawah */
+.bottom-ui-container {
+  position: absolute;
+  bottom: 24px;
+  left: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100;
+}
+
+/* Kotak Input Utama */
+.input-bar-miside {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 3.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  padding: 8px 14px;
+  width: 710px;
+}
+
+.input-bar-miside input {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  font-size: 13.5px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.input-bar-miside input::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-send-arrow {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  transition: transform 0.2s ease;
+}
+
+.btn-send-arrow:hover {
+  transform: translateX(3px);
+}
+
+/* Sub Baris Tombol (Pengaturan & Riwayat Pesan) */
+.bottom-sub-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  padding: 0 4px;
+}
+
+.sub-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.sub-btn:hover {
+  color: #ffffff;
+}
+
+
+
+/* ==========================================
+   NAVIGATION BAR BAGIAN KIRI ATAS
+   ========================================== */
+.top-nav-container {
+  position: absolute;
+  top: 24px;
+  left: 70px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 100;
+}
+.top-nav-keluar-container{
+  position: absolute;
+  top: 24px;
+  left: 84px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 100;
+}
+/* Base Style Tombol Navigasi */
+.nav-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 10px; /* Bentuk pill rounded */
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+/* Tombol Masuk (Latar Putih) */
+.btn-masuk {
+  background: #ffffff;
+  color: #222222;
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-masuk:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Tombol Daftar Untuk Gratis (Transparan dengan Outline) */
+.btn-daftar {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.btn-daftar:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+/* Posisi Top Nav saat Logged In */
+.top-nav-container.logged-in {
+  left: 280px; /* Bergeser ke kanan agar tidak tertutup sidebar */
+}
+.top-nav-keluar-container.logged-in {
+  left: 280px; /* Bergeser ke kanan agar tidak tertutup sidebar */
+}
+
+/* Tombol Keluar */
+.btn-keluar {
+  background: #ffffff;
+  color: #222222;
+  border: 1px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  margin-left: ;
+}
+
+.btn-keluar:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+/* Shift UI Kiri Bawah saat Sidebar Aktif */
+.bottom-ui-container.with-sidebar {
+  left: 280px; /* Bergeser sejajar dengan sidebar */
+  width: calc(100% - 300px);
+}
+
+.bottom-ui-container.with-sidebar .input-bar-miside {
+  width: 100%;
+  max-width: 650px;
+}
+/* ==========================================
+   TAMPILAN LAPTOP / DESKTOP (901px - 1440px)
+   ========================================== */
+@media (min-width: 901px) and (max-width: 1440px) {
+
+  /* 1. Navigasi Atas pada Laptop */
+  .top-nav-container {
+    top: 24px;
+    left: 24px;
+    transition: left 0.3s ease;
+  }
+
+  .top-nav-container.logged-in {
+    left: 280px; /* Geser ke kanan saat sidebar aktif */
+  }
+
+  /* 2. Container UI Bawah (Input & Sub Bar) */
+  .bottom-ui-container {
+    left: 24px;
+    width: 600px;
+    max-width: calc(100% - 48px);
+    transition: left 0.3s ease, width 0.3s ease;
+  }
+
+  .bottom-ui-container.with-sidebar {
+    left: 280px;
+    width: calc(100% - 310px);
+    max-width: 650px;
+  }
+
+  .input-bar-miside {
+    width: 100%;
+  }
+
+  .bottom-sub-bar {
+    width: 100%;
+  }
+
+  /* 3. Teks Melayang MiSideText */
+  .miside-chat-container {
+    left: 24px;
+    width: 600px;
+    max-width: calc(100% - 48px);
+    transition: left 0.3s ease, width 0.3s ease;
+  }
+
+  .miside-chat-container.with-sidebar {
+    left: 280px;
+    width: calc(100% - 310px);
+    max-width: 650px;
+  }
+}
+
+/* ==========================================
+   TAMPILAN DESKTOP LAYAR LEBAR (> 1440px)
+   ========================================== */
+@media (min-width: 1441px) {
+  .bottom-ui-container {
+    left: 40px;
+    width: 710px;
+  }
+
+  .bottom-ui-container.with-sidebar {
+    left: 300px;
+    width: 710px;
+  }
+
+  .miside-chat-container {
+    left: 40px;
+    width: 710px;
+  }
+
+  .miside-chat-container.with-sidebar {
+    left: 300px;
+    width: 710px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* 1. Posisi Navigation Bar Atas */
+  .top-nav-container{
+    top: 16px;
+    left: 16px;
+    gap: 8px;
+  }
+  .top-nav-keluar-container {
+    top: 16px;
+    left: 55px;
+    gap: 8px;
+  }
+  .top-nav-container.logged-in,
+  .top-nav-keluar-container.logged-in {
+    left: 16px; /* Tetap di kiri pada mobile agar tidak bergeser jauh */
+  }
+
+  /* Penyesuaian Tombol Masuk & Daftar di Layar Hp */
+  .nav-btn {
+    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 8px;
+  }
+
+  /* 2. Posisi Container UI Bawah (Center Horizon) */
+  .bottom-ui-container,
+  .bottom-ui-container.with-sidebar {
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 16px;
+    width: calc(100% - 32px);
+    max-width: 480px;
+  }
+
+  /* Kotak Input Utama Mobile */
+  .input-bar-miside {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-width: 2.5px;
+    padding: 8px 12px;
+    border-radius: 12px;
+  }
+
+  .input-bar-miside input {
+    font-size: 12.5px;
+  }
+
+  /* Sub Baris Tombol Mobile */
+  .bottom-sub-bar {
+    width: 100%;
+    padding: 0 6px;
+  }
+
+  .sub-btn {
+    font-size: 10px;
+  }
+
+  /* Floating Open Sidebar Button Mobile */
+  .btn-open-sidebar {
+    top: 16px;
+    left: 16px;
+    padding: 6px;
+  }
+}

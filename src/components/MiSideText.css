@@ -1,0 +1,188 @@
+.miside-chat-container {
+  position: absolute;
+  /* Posisi sejajar di atas box input tanpa menutupi seluruh layar */
+  bottom: 120px;
+  left: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+  z-index: 99;
+  width: 710px;
+  max-width: 710px;
+  max-height: 280px;
+  overflow: hidden; /* Mencegah teks meluap menutupi layar */
+  transition: left 0.3s ease, width 0.3s ease, bottom 0.3s ease; /* Transisi halus saat toggle login / resize */
+}
+
+/* ==========================================
+   PENYESUAIAN POSISI SAAT SUDAH LOGIN
+   ========================================== */
+.miside-chat-container.with-sidebar {
+  left: 280px; /* Bergeser ke kanan mengikuti posisi input bar baru */
+  width: 650px;
+  max-width: 650px;
+}
+
+.miside-sentence {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+/* Penyesuaian Ukuran Teks Panjang */
+.miside-sentence.is-long {
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+/* GAYA TEKS ANNA */
+.miside-sentence.anna .miside-char-in,
+.miside-sentence.anna .miside-char-fall {
+  background: linear-gradient(135deg, #D118CB 0%, #9212AE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #ffffff;
+}
+
+/* Hilangkan filter drop-shadow berat saat teks panjang agar TIDAK NGELAG */
+.miside-sentence.anna:not(.is-long) .miside-char-in,
+.miside-sentence.anna:not(.is-long) .miside-char-fall {
+  filter: drop-shadow(0px 3px 5px rgba(146, 18, 174, 0.4));
+}
+
+/* GAYA TEKS USER */
+.miside-sentence.user .miside-char-in,
+.miside-sentence.user .miside-char-fall {
+  color: #facc15;
+  -webkit-text-stroke: 1px #000000;
+}
+
+/* ANIMASI MUNCUL */
+.miside-char-in {
+  display: inline-block;
+  opacity: 0;
+  animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ANIMASI JATUH OPTIMASI GPU (NO LAG) */
+.miside-char-fall {
+  display: inline-block;
+  will-change: transform, opacity;
+  animation: misideGravityFall 2.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+}
+
+@keyframes misideGravityFall {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  35% {
+    opacity: 1;
+    transform: translate(var(--translateX, 0px), 180px) rotate(var(--rot, 15deg));
+  }
+  45% {
+    opacity: 1;
+    transform: translate(var(--translateX, 0px), 165px) rotate(var(--rot, 15deg));
+  }
+  55% {
+    opacity: 1;
+    transform: translate(var(--translateX, 0px), 180px) rotate(var(--rot, 15deg));
+  }
+  80% {
+    opacity: 1;
+    transform: translate(var(--translateX, 0px), 180px) rotate(var(--rot, 15deg));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--translateX, 0px), 195px) rotate(var(--rot, 15deg));
+  }
+}
+
+
+/* ==========================================
+   LAPTOP / DESKTOP SEDANG (901px - 1440px)
+   ========================================== */
+@media (min-width: 901px) and (max-width: 1440px) {
+  .miside-chat-container {
+    left: 24px;
+    width: 600px;
+    max-width: calc(100% - 48px);
+    bottom: 110px;
+  }
+
+  .miside-chat-container.with-sidebar {
+    left: 280px;
+    width: calc(100% - 310px);
+    max-width: 650px;
+  }
+
+  .miside-sentence {
+    font-size: 22px;
+  }
+
+  .miside-sentence.is-long {
+    font-size: 16px;
+  }
+}
+
+
+/* ==========================================
+   TABLET / TAB (769px - 900px)
+   ========================================== */
+@media (max-width: 900px) {
+  .miside-chat-container,
+  .miside-chat-container.with-sidebar {
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 105px;
+    width: calc(100% - 48px);
+    max-width: 620px;
+  }
+
+  .miside-sentence {
+    font-size: 20px;
+  }
+
+  .miside-sentence.is-long {
+    font-size: 15px;
+  }
+}
+
+
+/* ==========================================
+   MOBILE (MAX-WIDTH: 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  .miside-chat-container,
+  .miside-chat-container.with-sidebar {
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 95px;
+    width: calc(100% - 32px);
+    max-width: 480px;
+    max-height: 220px;
+  }
+
+  .miside-sentence {
+    font-size: 18px;
+  }
+
+  .miside-sentence.is-long {
+    font-size: 13.5px;
+    line-height: 1.3;
+  }
+}

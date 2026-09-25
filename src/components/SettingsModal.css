@@ -1,0 +1,363 @@
+/* Overlay Glassmorphism */
+.settings-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Card Popup Putih */
+.settings-modal-card {
+  position: relative;
+  background: #ffffff;
+  width: 720px;
+  max-width: 92vw;
+  height: 520px;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  display: flex;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #222222;
+  animation: scaleUp 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.settings-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: #888888;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.settings-close-btn:hover {
+  background: #f0f0f0;
+  color: #111111;
+}
+
+/* Column Kiri: Sidebar Settings */
+.settings-sidebar {
+  width: 220px;
+  background: #ffffff;
+  padding: 24px 16px;
+  border-right: 1px solid #eeeeee;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.settings-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111111;
+  display: flex;
+}
+
+/* Input Search Box */
+.settings-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.settings-search-box .search-icon {
+  position: absolute;
+  left: 10px;
+  color: #aaaaaa;
+}
+
+.settings-search-box input {
+  width: 100%;
+  padding: 7px 10px 7px 30px;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 12px;
+  outline: none;
+}
+
+/* Menu items */
+.settings-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.settings-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  color: #444444;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.settings-menu-item:hover {
+  background: #f5f5f5;
+}
+
+/* Active Menu (Pink Gradasi/Solid) */
+.settings-menu-item.active {
+  background: #ff477e;
+  color: #ffffff;
+}
+
+/* Column Kanan: Content Area */
+.settings-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-header-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111111;
+  display: flex;
+}
+
+/* Box Catatan Penting Hitam */
+.notice-box-black {
+  background: #0d0d0d;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.notice-header {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.warning-icon {
+  color: #facc15;
+  font-size: 9px;
+}
+
+.notice-body {
+  text-align: left;
+}
+
+.notice-body p {
+  margin-bottom: 8px;
+  color: #cccccc;
+}
+
+.notice-footer-status {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #222222;
+  font-style: italic;
+  color: #aaaaaa;
+}
+
+/* Rows setting Options */
+.settings-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.row-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.row-select {
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333333;
+  cursor: pointer;
+  outline: none;
+}
+
+.row-value-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #555555;
+}
+
+.color-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.color-dot.yellow {
+  background: #facc15;
+}
+
+.color-dot.pink {
+  background: #d118cb;
+}
+
+.placeholder-tab-content {
+  font-size: 13px;
+  color: #888888;
+  padding: 20px 0;
+}
+
+
+/* ==========================================
+   LAPTOP / DESKTOP SEDANG (901px - 1200px)
+   ========================================== */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .settings-modal-card {
+    width: 660px;
+    height: 480px;
+  }
+
+  .settings-sidebar {
+    width: 200px;
+    padding: 20px 14px;
+  }
+
+  .settings-content {
+    padding: 20px;
+  }
+}
+
+
+/* ==========================================
+   TABLET / TAB (769px - 900px)
+   ========================================== */
+@media (max-width: 900px) {
+  .settings-modal-card {
+    width: 90vw;
+    height: 500px;
+  }
+
+  .settings-sidebar {
+    width: 180px;
+    padding: 18px 12px;
+  }
+
+  .settings-menu-item {
+    font-size: 11.5px;
+    padding: 8px 10px;
+  }
+
+  .settings-content {
+    padding: 18px;
+  }
+}
+
+
+/* ==========================================
+   MOBILE (MAX-WIDTH: 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  .settings-modal-card {
+    flex-direction: column; /* Mengubah layout 2 kolom menjadi tumpuk vertikal */
+    width: 92vw;
+    height: 85vh;
+    max-height: 600px;
+    border-radius: 14px;
+  }
+
+  .settings-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eeeeee;
+    padding: 16px;
+  }
+
+  .settings-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .settings-search-box {
+    margin-bottom: 10px;
+  }
+
+  /* Mengubah menu tab menjadi horizontal scrollable bar pada mobile */
+  .settings-menu-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .settings-menu-item {
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 11.5px;
+  }
+
+  .settings-content {
+    padding: 16px;
+  }
+
+  .content-header-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .notice-box-black {
+    padding: 12px;
+    font-size: 10px;
+  }
+
+  .setting-row {
+    padding-bottom: 10px;
+  }
+
+  .row-label,
+  .row-select,
+  .row-value-indicator {
+    font-size: 11px;
+  }
+}

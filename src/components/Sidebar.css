@@ -1,0 +1,311 @@
+.sidebar-container {
+  width: 260px;
+  height: 100vh;
+  background-color: #a45353; /* Warna Mauve / Reddish Brown khas gambar */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+/* Header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sidebar-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.sidebar-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.sidebar-icon-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.sidebar-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Tombol Chat Baru */
+.btn-chat-baru {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.btn-chat-baru:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Menu items */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.sidebar-menu-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* History Section */
+.previous-chats-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 11px;
+  display: flex;
+  margin-left: 10px;
+}
+
+.chat-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+
+.chat-history-item {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.2s, color 0.2s;
+}
+
+.chat-history-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* Profile Footer */
+.sidebar-user-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: auto;
+}
+
+.user-info-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f0a202;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.user-plan {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+}
+
+.btn-upgrade {
+  background: #ffffff;
+  color: #333333;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-upgrade:hover {
+  background: #f0f0f0;
+}
+
+.btn-open-sidebar {
+  position: absolute;
+  top: 24px;
+  left: 40px;
+  z-index: 102;
+  background: #a45353;
+  backdrop-filter: blur(8px);
+  border: 1.5px solid #a45353;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-open-sidebar:hover {
+  background: rgba(0, 0, 0, 0.65);
+  border-color: #ffffff;
+  transform: scale(1.05);
+}
+
+
+/* ==========================================
+   LAPTOP SEDANG (901px - 1200px)
+   ========================================== */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .sidebar-container {
+    width: 240px;
+    padding: 14px;
+  }
+
+  .sidebar-logo {
+    font-size: 18px;
+  }
+
+  .btn-chat-baru {
+    padding: 9px 12px;
+    font-size: 12.5px;
+  }
+
+  .chat-history-item {
+    font-size: 11.5px;
+  }
+}
+
+
+/* ==========================================
+   TABLET / TAB (769px - 900px)
+   ========================================== */
+@media (max-width: 900px) {
+  .sidebar-container {
+    width: 250px;
+    z-index: 200; /* Diletakkan di atas layer lain saat overlay */
+    box-shadow: 6px 0 20px rgba(0, 0, 0, 0.35);.btn-open-sidebar
+  }
+
+  .btn-open-sidebar {
+    top: 20px;
+    left: 20px;
+    padding: 7px;
+  }
+}
+
+
+/* ==========================================
+   MOBILE (MAX-WIDTH: 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 80vw; /* Hampir memenuhi layar mobile saat dibuka */
+    max-width: 280px;
+    z-index: 200;
+    box-shadow: 8px 0 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .btn-open-sidebar {
+    top: 16px;
+    left: 16px;
+    padding: 6px;
+  }
+
+  .btn-chat-baru {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .sidebar-menu-item {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .chat-history-item {
+    padding: 8px 10px;
+    font-size: 12.5px;
+  }
+}

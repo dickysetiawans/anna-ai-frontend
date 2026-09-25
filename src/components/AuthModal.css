@@ -1,0 +1,170 @@
+/* Backdrop Overlay Gelap Transparan */
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Card Popup Putih */
+.auth-modal-card {
+  position: relative;
+  background: #ffffff;
+  width: 420px;
+  max-width: 90vw;
+  padding: 32px 28px 28px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #222222;
+  animation: scaleUp 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.auth-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: #888888;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.auth-modal-close:hover {
+  background: #f0f0f0;
+  color: #111111;
+}
+
+.auth-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #111111;
+}
+
+.auth-modal-subtitle {
+  font-size: 11.5px;
+  color: #777777;
+  margin-bottom: 20px;
+}
+
+/* Social Buttons */
+.auth-social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  background: #f3f3f3;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #222222;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.auth-btn-social:hover {
+  background: #e8e8e8;
+  border-color: #d0d0d0;
+}
+
+/* Divider OR */
+.auth-divider {
+  position: relative;
+  margin: 18px 0;
+  text-align: center;
+}
+
+.auth-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+.auth-divider span {
+  position: relative;
+  background: #ffffff;
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #aaa;
+}
+
+/* Input Email */
+.auth-input-group input {
+  width: 100%;
+  padding: 10px 14px;
+  background: #f3f3f3;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  font-size: 12.5px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.auth-input-group input:focus {
+  border-color: #ff477e;
+  background: #ffffff;
+}
+
+.auth-input-group input::placeholder {
+  color: #999999;
+}
+
+/* Tombol Pink Lanjutkan */
+.auth-btn-submit {
+  width: 100%;
+  margin-top: 14px;
+  padding: 11px;
+  background: #ff4b72;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.auth-btn-submit:hover {
+  background: #e03a60;
+  transform: translateY(-1px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
