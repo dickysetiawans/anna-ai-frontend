@@ -352,3 +352,67 @@ html, body, #root {
     padding: 6px;
   }
 }
+/* ==========================================
+   MOBILE UMUM, IPHONE 10 & XIAOMI (MAX-WIDTH: 768px)
+   ========================================== */
+@media (max-width: 768px) {
+
+  /* 1. Posisi Navigation Bar Atas (Aman dari Notch / Camera Punch Hole) */
+  .top-nav-container,
+  .top-nav-keluar-container {
+    top: calc(14px + env(safe-area-inset-top, 0px));
+    left: 16px;
+    gap: 8px;
+  }
+
+  .top-nav-container.logged-in,
+  .top-nav-keluar-container.logged-in {
+    left: 16px;
+  }
+
+  .nav-btn {
+    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 8px;
+  }
+
+  /* 2. Container UI Bawah (Aman dari Home Gesture Bar iOS/MIUI/HyperOS) */
+  .bottom-ui-container,
+  .bottom-ui-container.with-sidebar {
+    left: 50% !important;
+    transform: translateX(-50%);
+    /* calc + env safe area memastikan tombol tidak mepet garis navigasi HP */
+    bottom: calc(20px + env(safe-area-inset-bottom, 10px)) !important;
+    width: calc(100% - 32px);
+    max-width: 480px;
+  }
+
+  /* Kotak Input Utama Mobile */
+  .input-bar-miside {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-width: 2.5px;
+    padding: 8px 12px;
+    border-radius: 12px;
+  }
+
+  .input-bar-miside input {
+    font-size: 12.5px;
+  }
+
+  /* Sub Baris Tombol Mobile */
+  .bottom-sub-bar {
+    width: 100%;
+    padding: 0 6px;
+  }
+
+  .sub-btn {
+    font-size: 10px;
+  }
+
+  .btn-open-sidebar {
+    top: calc(14px + env(safe-area-inset-top, 0px));
+    left: 16px;
+    padding: 6px;
+  }
+}
